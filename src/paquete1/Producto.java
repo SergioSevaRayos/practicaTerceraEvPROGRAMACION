@@ -24,6 +24,23 @@ public abstract class Producto {
 	public abstract LocalDate obtener_caducidad();
 	public abstract void detalle_producto();
 	
+	public float descuento() {
+
+		
+		LocalDate fechaActual = LocalDate.now();
+
+		 // Calcular la diferencia en días entre la fecha actual y la fecha de caducidad
+       long diferenciaDias = fecha_caducidad.toEpochDay() - fechaActual.toEpochDay();
+
+       if (diferenciaDias <= 5) {
+           // Calcular el descuento del 30% si hay oferta
+           float descuento = 0.3f * precio; // Descuento del 30%
+           precio -= descuento; // Aplicar el descuento al precio
+       } 
+    float precioRedondeado = Math.round(precio * 100.0f) / 100.0f;   
+	return precioRedondeado;
+	}
+	
 	public String verificarOferta() {
 		LocalDate fechaActual = LocalDate.now();
 
@@ -32,17 +49,9 @@ public abstract class Producto {
 
         // Verificar si faltan menos de 5 días para la caducidad (oferta)
         if (diferenciaDias <= 5) {
-//            System.out.println("¡Hay oferta para el producto " + nombre + "!");
-//            System.out.println("Fecha de caducidad: " + fecha_caducidad);
-//            System.out.println("Hoy es: " + fechaActual);
-//            System.out.println("Días restantes para la caducidad: " + diferenciaDias);
             String oferta;
     		return oferta = " \uD83D\uDC4F ¡HAY OFERTA! \uD83D\uDC4F";
         } else {
-//            System.out.println("No hay oferta para el producto " + nombre);
-//            System.out.println("Fecha de caducidad: " + fecha_caducidad);
-//            System.out.println("Hoy es: " + fechaActual);
-//            System.out.println("Días restantes para la caducidad: " + diferenciaDias);
             String oferta;
     		return oferta = " \u274C NO HAY OFERTA \u274C";
         }

@@ -38,7 +38,7 @@ public class Bebida extends Producto {
 		System.out.println("   \uD83C\uDF7A Detalles del producto \uD83C\uDF7A \n"
 						 + " |═════════════════════════════|\n"
 						 + " - Nombre:     " + nombre + "\n"
-						 + " - Precio:     " + precio + "\n"
+						 + " - Precio:     " + descuento() + "\n"
 						 + " - Caducidad:  " + obtener_caducidad() + "\n"
 						 + " - Estado:     " + estado + "\n"
 						 + " - Oferta: " + verificarOferta());

@@ -30,6 +30,17 @@ public class Comida extends Producto{
 		}
 
 	}
+public String perecedero() {
+		
+		if (perecedero) {
+			String perec;
+			return perec = "Si";
+		}else {
+			String perec;
+			return perec = "No";
+		}
+
+	}
 	// Implementación de métodos abstractos
 	 @Override
 	    public LocalDate obtener_caducidad() {
@@ -52,10 +63,10 @@ public class Comida extends Producto{
 		System.out.println("   \uD83C\uDF4C " + "Detalles del producto \uD83C\uDF4C  \n"
 						 + "|══════════════════════════════|\n"
 						 + " - Nombre:       " + nombre + "\n"
-						 + " - Precio:       " + precio + "\n"
+						 + " - Precio:       " + descuento() + "\n"
 						 + " - Caducidad:    " + obtener_caducidad() + "\n"
 						 + " - Estado:       " + estado + "\n"
-						 + " - Perecedero:   " + perecedero + "\n"
+						 + " - Perecedero:   " + perecedero() + "\n"
 						 + " - Calrías:      " + calorias + "\n"
 						 + " - Vegano:       " + vegano() + "\n"
 						 + " - Fecha envase: " + fecha_envase + "\n"
