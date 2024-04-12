@@ -52,7 +52,5 @@ public class Bebida extends Producto {
 	}
 	
 	
-	public static void main(String[] args) {
 
-	}
 }

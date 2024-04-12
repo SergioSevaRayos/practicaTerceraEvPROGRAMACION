@@ -17,7 +17,7 @@ public abstract class Producto {
 		this.nombre = nombre;
 		this.precio = precio;
 		this.fecha_caducidad = fecha_caducidad;
-		this.estado = "En stock";
+		this.estado = "COMESTIBLE";
 	}
 
 	// Métodos abstractos
@@ -25,8 +25,6 @@ public abstract class Producto {
 	public abstract void detalle_producto();
 	
 	public float descuento() {
-
-		
 		LocalDate fechaActual = LocalDate.now();
 
 		 // Calcular la diferencia en días entre la fecha actual y la fecha de caducidad
@@ -55,6 +53,21 @@ public abstract class Producto {
             String oferta;
     		return oferta = " \u274C NO HAY OFERTA \u274C";
         }
+
+		
+	}
+	
+	public String verificarEsado() {
+		LocalDate fechaActual = LocalDate.now();
+
+		 // Calcular la diferencia en días entre la fecha actual y la fecha de caducidad
+        long diferenciaDias = fecha_caducidad.toEpochDay() - fechaActual.toEpochDay();
+
+        // Verificar si faltan menos de 5 días para la caducidad (oferta)
+        if (diferenciaDias <= 0) {
+    		estado = "¡CADUCADO!";
+        } 
+        return estado;
 		
 	}
 

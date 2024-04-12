@@ -65,7 +65,7 @@ public String perecedero() {
 						 + " - Nombre:       " + nombre + "\n"
 						 + " - Precio:       " + descuento() + "\n"
 						 + " - Caducidad:    " + obtener_caducidad() + "\n"
-						 + " - Estado:       " + estado + "\n"
+						 + " - Estado:       " + verificarEsado() + "\n"
 						 + " - Perecedero:   " + perecedero() + "\n"
 						 + " - Calrías:      " + calorias + "\n"
 						 + " - Vegano:       " + vegano() + "\n"
@@ -79,8 +79,11 @@ public String perecedero() {
 		return super.verificarOferta();
 	}
 	
-	public static void main(String[] args) {
-
+	@Override
+	public String verificarEsado() {
+		return super.verificarEsado();
 	}
+	
 
 }
+
